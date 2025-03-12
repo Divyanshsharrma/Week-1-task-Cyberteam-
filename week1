@@ -1,0 +1,39 @@
+Task Week-1
+#Discuss TCP & UDP Protocols and mention the difference between the two along with examples where they are used?
+TCP stands for Transmission Control Protocol that ensures reliable communication between host(sender) end to destination end. It's three way handshake procedure which includes flags such as sync, ack, fin, rst, psh, urg.
+UDP stands for User datagram protocol, based on connectionless protocol that sends the packets without the acknowledgement from the receiver's end.
+
+TCP is connection-oriented protocol while UDP is connectionless protocol, 
+TCP reliable than UDP because UDP doesn't require any acknowledgement from the receiver's end.
+Examples :
+TCP used in uploading and downloading the files (ftp://abcd.com)
+UDP used in Video Streaming (Youtube, Hotstar etc)
+TCP used in Gmail, yahoo etc
+UDP used in Online Gaming
+
+
+#List the TCP Flags along with their use/function?
+1. URG (urgent) : Data contained in the packet should be processed immediately.
+2. FIN (finish) : After the transmission of the file then there is no need of establishing the network connection.
+3. RST (reset) : Resets a connection for resolving the issues like slow packets transmission.
+4. PSH (push) : send all bufferd data immediatedly
+5. ACK (Acknowledgment) : Receiver end acknowledge the receipt of the packet to the ender host.
+6. SYN (Synchronize) : always used in first step for the connection request, initiates the connection between two hosts.
+
+
+#What is the difference in executing nmap as root user and as normal user? Give the flags
+in nmap which require root permission to be performed?
+Nomal user - can not perform stealth scans which are slower and less stealthier
+Root User - can perform stealth scans which are faster.
+
+ nmap -A [Target IP Address] :  A stands for Aggressive, displaying the open ports and running services along with their versions and target details.
+ nmap -O [Target IP Address] :  O stands for OS fingerprinting, displaying information about open ports, respective services running on the open ports, and the name of the OS running on the target system
+ nmap -f [Target IP Address] :  F stands for tiny fragments, used to split the IP packet into tiny fragment packets.
+ nmap -sX [Target IP Address] : sX performs xmas scan
+ nmap -sT -v [Target IP Address] : performs the TCP connect/full open scan and -v: enables the verbose output (include all hosts and ports in the output).
+ nmap -sS -v [Target IP Address] :  -sS: performs the stealth scan/TCP half-open scan
+
+
+
+
+
